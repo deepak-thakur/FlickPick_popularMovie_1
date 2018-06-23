@@ -9,6 +9,15 @@ public class Movie {
     private String mPlot;
     private String mRating;
     private String mReleaseDate;
+    private String backdropPoster;
+
+    public String getBackdropPoster() {
+        return backdropPoster;
+    }
+
+    public void setBackdropPoster(String backdropPoster) {
+        this.backdropPoster = backdropPoster;
+    }
 
     public int getmId() {
         return mId;

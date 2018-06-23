@@ -154,6 +154,7 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.Movi
         intent.putExtra("plot", mMovie[position].getmPlot());
         intent.putExtra("rating", mMovie[position].getmRating());
         intent.putExtra("releaseDate", mMovie[position].getmReleaseDate());
+        intent.putExtra("backdropimage",mMovie[position].getBackdropPoster());
         startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
     }
 

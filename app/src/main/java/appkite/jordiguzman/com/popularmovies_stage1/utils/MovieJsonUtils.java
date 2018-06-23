@@ -16,6 +16,9 @@ public class MovieJsonUtils {
     private static final String MOVIE_PLOT = "overview";
     private static final String MOVIE_RATING = "vote_average";
     private static final String MOVIE_RELEASE_DATE = "release_date";
+    private static final String Movie_Backdrop="backdrop_image";
+
+
 
 
     public static Movie[] parseJsonMoview(String jsonMoviesData) throws JSONException {
@@ -30,6 +33,7 @@ public class MovieJsonUtils {
             movie.setmPlot(jsonArrayResult.getJSONObject(i).optString(MOVIE_PLOT));
             movie.setmRating(jsonArrayResult.getJSONObject(i).optString(MOVIE_RATING));
             movie.setmReleaseDate(jsonArrayResult.getJSONObject(i).optString(MOVIE_RELEASE_DATE));
+            movie.setBackdropPoster((jsonArrayResult.getJSONObject(i).optString(Movie_Backdrop)));
             result[i] = movie;
         }
         return result;

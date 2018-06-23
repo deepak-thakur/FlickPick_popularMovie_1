@@ -4,6 +4,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -14,6 +15,7 @@ import com.squareup.picasso.Picasso;
 public class DetailActivity extends AppCompatActivity {
 
     private static final String URL_IMAGE_PATH = "http://image.tmdb.org/t/p/w185";
+    private static final String backdrop_url = "http://image.tmdb.org/t/p/w500";
 
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -23,6 +25,7 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
 
 
+        ImageView backdrop = findViewById(R.id.id_background_poster);
 
         ImageView iv_poster_detail = findViewById(R.id.id_small_movie_poster);
         TextView tv_title= findViewById(R.id.id_movie_name);
@@ -31,6 +34,7 @@ public class DetailActivity extends AppCompatActivity {
         TextView tv_release = findViewById(R.id.movie_genere);
 
 
+        String Backdrop = getIntent().getStringExtra("backdropimage");
         String title = getIntent().getStringExtra("title");
         String poster = getIntent().getStringExtra("poster");
         String plot = getIntent().getStringExtra("plot");
@@ -47,6 +51,13 @@ public class DetailActivity extends AppCompatActivity {
         tv_release.setText(releaseFinal);
         setTitle(title);
 
+        Log.d("tag","poster loaded");
+
+        Picasso.with(this)
+                .load(backdrop_url.concat((Backdrop)))
+                .into(backdrop);
+
+            Log.d("tag","backdrop not loaded");
 
 
     }
