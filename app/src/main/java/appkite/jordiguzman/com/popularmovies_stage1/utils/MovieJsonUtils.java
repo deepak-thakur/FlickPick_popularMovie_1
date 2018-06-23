@@ -16,7 +16,7 @@ public class MovieJsonUtils {
     private static final String MOVIE_PLOT = "overview";
     private static final String MOVIE_RATING = "vote_average";
     private static final String MOVIE_RELEASE_DATE = "release_date";
-    private static final String Movie_Backdrop="backdrop_image";
+    private static final String Movie_Backdrop="backdrop_path";
 
 
 
