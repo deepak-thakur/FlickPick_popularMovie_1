@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<android.support.constraint.ConstraintLayout
+<ScrollView
 
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -8,13 +8,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/japan_mt"
-    android:id="@+id/relativeLayout">
+    android:id="@+id/relativeLayout1">
 
-
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
 
      <ImageView
         android:id="@+id/id_background_poster"
-        android:layout_width="400dp"
+        android:layout_width="match_parent"
         android:layout_height="190dp"
         android:layout_marginTop="0dp"
         android:adjustViewBounds="true"
@@ -34,8 +36,8 @@
         app:layout_constraintStart_toStartOf="parent"/>
 
     <View
-        android:id="@+id/view"
-        android:layout_width="350dp"
+        android:id="@+id/view_yellow_line"
+        android:layout_width="565dp"
         android:layout_height="3dp"
         android:layout_gravity="center"
         android:layout_marginLeft="16dp"
@@ -55,6 +57,8 @@
         android:text="Movie Name"
         android:textColor="@color/white"
         android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginLeft="190dp"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent"/>
 
@@ -64,38 +68,40 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="220dp"
         android:text="Movie genere"
+        android:layout_marginLeft="190dp"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="@+id/id_movie_name"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="248dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/btn_star_big_on"/>
+           <ImageView
+               android:id="@+id/imageView_star"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignBottom="@+id/id_small_movie_poster"
+               android:layout_alignParentStart="true"
+               android:layout_marginStart="174dp"
+               app:layout_constraintLeft_toLeftOf="parent"
+               app:layout_constraintRight_toRightOf="parent"
+               app:layout_constraintTop_toTopOf="parent"
+               app:srcCompat="@android:drawable/btn_star_big_on"/>
+
+           <TextView
+               android:id="@+id/id_user_rating"
+               android:layout_width="44dp"
+               android:layout_height="24dp"
+               android:layout_alignBottom="@+id/imageView_star"
+               android:layout_alignParentStart="true"
+               android:layout_marginStart="218dp"
+               android:text="Rating"
+               android:textColor="@color/white"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintHorizontal_bias="0.0"
+               app:layout_constraintStart_toEndOf="@+id/imageView"
+               app:layout_constraintTop_toTopOf="parent"
+               android:layout_alignParentLeft="true"/>
 
     <TextView
-        android:id="@+id/id_user_rating"
-        android:layout_width="44dp"
-        android:layout_height="24dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="256dp"
-        android:text="Rating"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textView_overview_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -103,7 +109,8 @@
         android:layout_marginLeft="24dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="308dp"
+        android:layout_marginTop="315dp"
+        android:textSize="15dp"
         android:text="Overview"
         android:textColor="@color/white"
         android:textStyle="bold"
@@ -119,13 +126,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="10dp"
         android:text="TextView"
         android:textColor="@color/white"
+        android:layout_marginLeft="20dp"
+
+        android:layout_below="@id/textView_overview_label"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView4"
         app:layout_constraintVertical_bias="0.0"
         tools:layout_editor_absoluteX="32dp"/>
 
-
-</android.support.constraint.ConstraintLayout>
+       </RelativeLayout>
+</ScrollView>
